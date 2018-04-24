@@ -23,6 +23,7 @@ ENV NGINX_GLOBAL_CONFIGURATION_PATH=/opt/app-root/etc/nginx.global.d
 ENV NGINX_HTTP_GLOBAL_SERVER_CONFIGURATION_PATH=/opt/app-root/etc/nginx.httpglobal.d
 ENV NGINX_DEFAULT_SERVER_CONFIGURATION_PATH=/opt/app-root/etc/nginx.defaultserver.d
 
+RUN yum-config-manager --disable rhel-7-server-htb-rpms, rhel-7-server-rt-* > /dev/null
 
 RUN INSTALL_PKGS="rh-nodejs4 rh-nodejs4-npm rh-nodejs4-nodejs-nodemon ruby" && \
     yum install -y --setopt=tsflags=nodocs \
