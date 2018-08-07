@@ -25,7 +25,7 @@ ENV NGINX_DEFAULT_SERVER_CONFIGURATION_PATH=/opt/app-root/etc/nginx.defaultserve
 
 RUN yum-config-manager --disable rhel-7-server-htb-rpms, rhel-7-server-rt-* > /dev/null
 
-RUN INSTALL_PKGS="rh-nodejs4 rh-nodejs4-npm rh-nodejs4-nodejs-nodemon ruby" && \
+RUN INSTALL_PKGS="rh-nodejs6 rh-nodejs6-npm rh-nodejs6-nodejs-nodemon ruby" && \
     yum install -y --setopt=tsflags=nodocs \
     --enablerepo rhel-server-rhscl-7-rpms  \
     --enablerepo rhel-7-server-optional-rpms \
