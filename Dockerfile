@@ -31,6 +31,7 @@ RUN INSTALL_PKGS="rh-nodejs6 rh-nodejs6-npm rh-nodejs6-nodejs-nodemon ruby" && \
     --enablerepo rhel-7-server-optional-rpms \
     $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
+#    sudo scl enable rh-nodejs6 'npm install --unsafe-perm -g gulp' && \
     yum clean all -y
 
 RUN yum install -y yum-utils gettext hostname && \
@@ -57,6 +58,7 @@ COPY ./contrib/nginx.conf /etc/opt/rh/rh-nginx18/nginx/nginx.conf
 RUN mkdir -p /opt/app-root/etc/nginx.d/ && \
     chmod -R a+rwx /opt/app-root/etc && \
     chmod -R a+rwx /var/opt/rh/rh-nginx18 && \
+    chmod -R a+rwx /opt/app-root/src/dist && \
     chown -R 1001:0 /opt/app-root && \
     chown -R 1001:0 /var/opt/rh/rh-nginx18
 
