@@ -17,7 +17,9 @@ npm install
 echo "---> Running Webpack on source"
 npm run ${ANGULAR_BUILD_TARGET:-webpack-prod}
 
+echo "----> running permissiong fixes "
 chmod -R a+rwx /opt/app-root/src/dist
+chown -R 1001:0 /opt/app-root/src/dist
 
 echo "---> Removing node_modules directory"
 #rm -rf node_modules/
