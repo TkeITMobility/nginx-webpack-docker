@@ -58,10 +58,10 @@ COPY ./contrib/nginx.conf /etc/opt/rh/rh-nginx18/nginx/nginx.conf
 RUN mkdir -p /opt/app-root/etc/nginx.d/ && \
     chmod -R a+rwx /opt/app-root/etc && \
     chmod -R a+rwx /var/opt/rh/rh-nginx18 && \
-    chown -R 1001780000:0 /opt/app-root && \
-    chown -R 1001780000:0 /var/opt/rh/rh-nginx18
+    chown -R 1001:0 /opt/app-root && \
+    chown -R 1001:0 /var/opt/rh/rh-nginx18
 
-USER 1001780000
+USER 1001
 
 VOLUME ["/var/opt/rh/rh-nginx18/log/nginx/"]
 
